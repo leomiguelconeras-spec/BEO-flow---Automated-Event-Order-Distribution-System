@@ -1,0 +1,142 @@
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.1",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.1.1",
+    "jspdf": "https://aistudiocdn.com/jspdf@^2.5.1",
+    "html2canvas": "https://aistudiocdn.com/html2canvas@^1.4.1"
+  }
+}
+</script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BEO Flow - Banquet Event Order System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+      
+      :root {
+        --background: #FDFBF6; /* Creamy off-white */
+        --foreground: #3A3A3A; /* Dark charcoal */
+        --card: #FFFFFF;
+        --card-foreground: #3A3A3A;
+        --popover: #FFFFFF;
+        --popover-foreground: #3A3A3A;
+        --primary: #C5A05C; /* Muted Gold */
+        --primary-foreground: #FFFFFF;
+        --secondary: #F1F1F1; /* Light Gray */
+        --secondary-foreground: #3A3A3A;
+        --muted: #E5E5E5;
+        --muted-foreground: #707070;
+        --accent: #F8F4E8; /* Lightest cream/gold */
+        --accent-foreground: #3A3A3A;
+        --destructive: #EF4444;
+        --destructive-foreground: #FFFFFF;
+        --border: #E0DCCC; /* Beige border */
+        --input: #E0DCCC;
+        --ring: #C5A05C;
+      }
+
+      body {
+        background-color: var(--background);
+        color: var(--foreground);
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      @media print {
+        .no-print {
+            display: none !important;
+        }
+
+        body {
+            background-color: #fff !important;
+        }
+        
+        main {
+            max-width: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .bg-card {
+            box-shadow: none !important;
+            border: 1px solid #ccc !important;
+            background-color: #fff !important;
+        }
+
+        /* Adjust text colors for better print visibility */
+        .text-primary, .text-foreground, .text-card-foreground {
+             color: #000 !important;
+        }
+        .text-muted-foreground {
+            color: #555 !important;
+        }
+
+        /* Ensure status badges print correctly */
+        .rounded-full {
+            border: 1px solid #ddd;
+            background-color: #f9f9f9 !important;
+            color: #000 !important;
+        }
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              border: 'hsl(var(--border))',
+              input: 'hsl(var(--input))',
+              ring: 'hsl(var(--ring))',
+              background: 'hsl(var(--background))',
+              foreground: 'hsl(var(--foreground))',
+              primary: {
+                DEFAULT: 'hsl(var(--primary))',
+                foreground: 'hsl(var(--primary-foreground))',
+              },
+              secondary: {
+                DEFAULT: 'hsl(var(--secondary))',
+                foreground: 'hsl(var(--secondary-foreground))',
+              },
+              destructive: {
+                DEFAULT: 'hsl(var(--destructive))',
+                foreground: 'hsl(var(--destructive-foreground))',
+              },
+              muted: {
+                DEFAULT: 'hsl(var(--muted))',
+                foreground: 'hsl(var(--muted-foreground))',
+              },
+              accent: {
+                DEFAULT: 'hsl(var(--accent))',
+                foreground: 'hsl(var(--accent-foreground))',
+              },
+              popover: {
+                DEFAULT: 'hsl(var(--popover))',
+                foreground: 'hsl(var(--popover-foreground))',
+              },
+              card: {
+                DEFAULT: 'hsl(var(--card))',
+                foreground: 'hsl(var(--card-foreground))',
+              },
+            },
+            borderRadius: {
+              lg: `0.5rem`,
+              md: `calc(0.5rem - 2px)`,
+              sm: `calc(0.5rem - 4px)`,
+            },
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

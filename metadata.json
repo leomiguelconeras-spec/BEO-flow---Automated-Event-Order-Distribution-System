@@ -1,0 +1,5 @@
+{
+  "name": "BEO Flow - Automated Banquet Event Order & Distribution System",
+  "description": "An intuitive system for sales to input event details, which then automatically populates Banquet Event Orders (BEO's) and intelligently distributes relevant information to hotel departments via email.",
+  "requestFramePermissions": []
+}
